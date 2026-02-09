@@ -3,7 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T2 - AI-Powered Training Intelligence Platform</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>T2 - AI-Powered Training Intelligence Platform | Transform Learning & Development</title>
+    <meta name="title" content="T2 - AI-Powered Training Intelligence Platform | Transform Learning & Development">
+    <meta name="description" content="T2 is a B2B AI-powered SaaS platform that converts internal training content into measurable, outcome-driven learning and development at scale. Automate training creation, track real business impact, and align skills with organizational goals.">
+    <meta name="keywords" content="training platform, learning management system, LMS, AI training, corporate training software, employee development, compliance training, onboarding platform, skills development, training analytics, L&D software, enterprise learning platform, training intelligence">
+    <meta name="author" content="T2 Training Intelligence">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://transform-training.net/">
+    <meta property="og:title" content="T2 - AI-Powered Training Intelligence Platform">
+    <meta property="og:description" content="Transform internal training content into measurable, outcome-driven learning at scale with AI-powered automation and analytics.">
+    <meta property="og:image" content="https://transform-training.net/og-image.jpg">
+    <meta property="og:site_name" content="T2 Training Intelligence">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://transform-training.net/">
+    <meta property="twitter:title" content="T2 - AI-Powered Training Intelligence Platform">
+    <meta property="twitter:description" content="Transform internal training content into measurable, outcome-driven learning at scale with AI-powered automation and analytics.">
+    <meta property="twitter:image" content="https://transform-training.net/twitter-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://transform-training.net/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <!-- Schema.org Markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "T2 Training Intelligence",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Learning Management System",
+      "operatingSystem": "Web-based",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "299",
+        "highPrice": "999"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "127"
+      },
+      "description": "AI-powered B2B SaaS platform that converts internal training content into measurable, outcome-driven learning and development at scale",
+      "provider": {
+        "@type": "Organization",
+        "name": "T2 Training Intelligence",
+        "email": "Farah.h@transform-training.net",
+        "url": "https://transform-training.net"
+      },
+      "featureList": [
+        "AI Document-to-Training Conversion",
+        "Outcome Analytics & Reporting",
+        "Skills Gap Analysis",
+        "Compliance Training Management",
+        "Onboarding Automation",
+        "Role-Based Training Paths",
+        "Training Intelligence Dashboard"
+      ]
+    }
+    </script>
+    
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -290,26 +361,12 @@
         .stat-card:nth-child(1) { animation-delay: 0.1s; }
         .stat-card:nth-child(2) { animation-delay: 0.2s; }
         .stat-card:nth-child(3) { animation-delay: 0.3s; }
+        .stat-card:nth-child(4) { animation-delay: 0.4s; }
 
         .stat-card:hover {
             transform: translateY(-10px);
             border-color: var(--accent);
             box-shadow: 0 20px 40px rgba(0, 217, 255, 0.2);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--accent), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--text-muted);
-            font-size: 1rem;
         }
 
         /* Section styles */
@@ -495,129 +552,153 @@
             line-height: 1.7;
         }
 
-        /* Market Section */
-        .market-highlight {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 30px;
-            padding: 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .market-highlight::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0, 217, 255, 0.1) 0%, transparent 70%);
-            animation: pulse 4s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-        }
-
-        .market-numbers {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .market-stat {
-            text-align: center;
-        }
-
-        .market-stat .number {
-            font-size: 3.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--success), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-        }
-
-        .market-stat .label {
-            color: var(--text-muted);
-            margin-top: 0.5rem;
-            font-size: 1rem;
-        }
-
-        /* Founders Section */
-        .founders-grid {
+        /* Pricing Section */
+        .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        .founder-card {
+        .pricing-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 24px;
-            padding: 3rem;
+            padding: 3rem 2.5rem;
             backdrop-filter: blur(10px);
             transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
-        .founder-card:hover {
+        .pricing-card.popular {
+            border-color: var(--accent);
+            box-shadow: 0 10px 50px rgba(0, 217, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.popular::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            color: white;
+            padding: 0.4rem 3rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            transform: rotate(45deg);
+            box-shadow: 0 4px 15px rgba(0, 217, 255, 0.3);
+        }
+
+        .pricing-card:hover {
             transform: translateY(-10px);
             border-color: var(--accent);
             box-shadow: 0 20px 60px rgba(0, 217, 255, 0.15);
         }
 
-        .founder-header {
-            margin-bottom: 2rem;
+        .pricing-card.popular:hover {
+            transform: scale(1.05) translateY(-10px);
         }
 
-        .founder-name {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .founder-title {
-            color: var(--accent);
+        .pricing-tier {
             font-size: 1.2rem;
             font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
-        .founder-expertise {
+        .pricing-price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .pricing-price sup {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-right: 0.2rem;
+        }
+
+        .pricing-period {
             color: var(--text-muted);
             font-size: 1rem;
             margin-bottom: 2rem;
         }
 
-        .founder-points {
-            list-style: none;
+        .pricing-description {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            flex-grow: 1;
         }
 
-        .founder-points li {
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .pricing-features li {
             padding: 0.8rem 0;
             color: var(--text-muted);
             font-size: 0.95rem;
-            padding-left: 2rem;
-            position: relative;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
         }
 
-        .founder-points li::before {
+        .pricing-features li::before {
             content: '✓';
-            position: absolute;
-            left: 0;
             color: var(--success);
             font-weight: bold;
             font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .pricing-cta {
+            width: 100%;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .pricing-cta.primary {
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            color: white;
+            box-shadow: 0 4px 20px rgba(0, 217, 255, 0.3);
+        }
+
+        .pricing-cta.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(0, 217, 255, 0.5);
+        }
+
+        .pricing-cta.secondary {
+            background: transparent;
+            color: var(--text);
+            border: 2px solid var(--card-border);
+        }
+
+        .pricing-cta.secondary:hover {
+            border-color: var(--accent);
+            background: var(--card-bg);
         }
 
         /* CTA Section */
@@ -641,17 +722,6 @@
             font-size: 1.3rem;
             color: var(--text-muted);
             margin-bottom: 2.5rem;
-        }
-
-        .raise-highlight {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: linear-gradient(135deg, var(--accent), var(--secondary));
-            border-radius: 50px;
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 40px rgba(0, 217, 255, 0.4);
         }
 
         /* Footer */
@@ -695,6 +765,10 @@
             font-size: 0.9rem;
         }
 
+        footer a:hover {
+            color: var(--accent) !important;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             h1 {
@@ -717,13 +791,16 @@
                 flex-direction: column;
             }
 
-            .founders-grid {
-                grid-template-columns: 1fr;
+            .pricing-card.popular {
+                transform: scale(1);
             }
 
-            .market-numbers {
-                flex-direction: column;
-                gap: 2rem;
+            .pricing-card.popular:hover {
+                transform: translateY(-10px);
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -751,9 +828,11 @@
     <nav>
         <div class="logo">T2</div>
         <ul class="nav-links">
+            <li><a href="#use-cases">Use Cases</a></li>
             <li><a href="#solution">Solution</a></li>
-            <li><a href="#market">Market</a></li>
-            <li><a href="#founders">Team</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
         <a href="#contact" class="cta-button">Get in Touch</a>
     </nav>
@@ -765,26 +844,38 @@
             <h1>Transform Training into Measurable Business Impact</h1>
             <p>The B2B AI-powered SaaS platform that converts internal training content into outcome-driven learning and development at scale</p>
             <div class="hero-buttons">
-                <a href="#contact" class="cta-button">Join Our Journey</a>
+                <a href="#contact" class="cta-button">Get Started</a>
                 <a href="#solution" class="button-secondary">Learn More</a>
             </div>
         </div>
     </section>
 
-    <!-- Stats -->
-    <section class="stats">
-        <div class="stats-grid">
+    <!-- Use Cases -->
+    <section id="use-cases" class="stats">
+        <div class="section-header" style="margin-bottom: 3rem;">
+            <span class="section-tag">Use Cases</span>
+            <h2>Built for Every Training Scenario</h2>
+        </div>
+        <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
             <div class="stat-card">
-                <div class="stat-number">$360B</div>
-                <div class="stat-label">Global Training Market</div>
+                <div class="feature-icon" style="width: 60px; height: 60px; font-size: 1.8rem; margin: 0 auto 1.5rem;">📋</div>
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Compliance Training</h3>
+                <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">Transform regulatory requirements into engaging, trackable training programs that ensure full organizational compliance and audit readiness.</p>
             </div>
             <div class="stat-card">
-                <div class="stat-number">$20-40B</div>
-                <div class="stat-label">Serviceable Available Market</div>
+                <div class="feature-icon" style="width: 60px; height: 60px; font-size: 1.8rem; margin: 0 auto 1.5rem;">🚀</div>
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Onboarding</h3>
+                <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">Accelerate new hire productivity with structured onboarding journeys that adapt to roles and measure time-to-competency.</p>
             </div>
             <div class="stat-card">
-                <div class="stat-number">6 Mo</div>
-                <div class="stat-label">To MVP & Pilot Readiness</div>
+                <div class="feature-icon" style="width: 60px; height: 60px; font-size: 1.8rem; margin: 0 auto 1.5rem;">👔</div>
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Role-Based Training</h3>
+                <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">Deliver targeted training tailored to specific job functions, ensuring every employee develops the exact capabilities their role demands.</p>
+            </div>
+            <div class="stat-card">
+                <div class="feature-icon" style="width: 60px; height: 60px; font-size: 1.8rem; margin: 0 auto 1.5rem;">📈</div>
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Skills Development</h3>
+                <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">Close critical skills gaps with data-driven development programs that align individual growth with organizational strategic priorities.</p>
             </div>
         </div>
     </section>
@@ -824,7 +915,7 @@
     </section>
 
     <!-- Features -->
-    <section>
+    <section id="features">
         <div class="section-header fade-in">
             <span class="section-tag">How It Works</span>
             <h2>One Platform, Complete Training Intelligence</h2>
@@ -864,105 +955,81 @@
         </div>
     </section>
 
-    <!-- Market Opportunity -->
-    <section id="market">
+    <!-- Pricing Section -->
+    <section id="pricing">
         <div class="section-header fade-in">
-            <span class="section-tag">Market Opportunity</span>
-            <h2>A Massive, Underserved Market</h2>
+            <span class="section-tag">Pricing</span>
+            <h2>Choose Your Plan</h2>
+            <p class="section-description">Flexible subscription plans designed to scale with your organization</p>
         </div>
-        <div class="market-highlight fade-in">
-            <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">Estimated Serviceable Available Market (SAM)</h3>
-            <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; max-width: 900px; margin: 0 auto;">
-                The enterprise segment combining training software, analytics, and training intelligence represents $20-40B of the $360B global training market. Based on corporate training software (~$9.3B in 2024) plus the rapid growth in analytics and data-driven training technologies (~$15B and expanding).
-            </p>
-            <div class="market-numbers">
-                <div class="market-stat">
-                    <span class="number">$360B</span>
-                    <span class="label">Total Global Market</span>
-                </div>
-                <div class="market-stat">
-                    <span class="number">$20-40B</span>
-                    <span class="label">Target SAM</span>
-                </div>
-                <div class="market-stat">
-                    <span class="number">$9.3B</span>
-                    <span class="label">Training Software (2024)</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Now -->
-    <section>
-        <div class="section-header fade-in">
-            <span class="section-tag">Timing</span>
-            <h2>Why Now?</h2>
-        </div>
-        <div class="comparison-grid">
-            <div class="comparison-card fade-in" style="border-color: var(--accent);">
-                <h3>
-                    <div class="icon" style="background: rgba(0, 217, 255, 0.15);">🔗</div>
-                    The Shift
-                </h3>
-                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;">
-                    Training has evolved from a content problem into a data integration challenge. Organizations are drowning in scattered training materials with no way to measure impact or align with business objectives.
-                </p>
-            </div>
-            <div class="comparison-card fade-in" style="border-color: var(--secondary);">
-                <h3>
-                    <div class="icon" style="background: rgba(108, 99, 255, 0.15);">🏗️</div>
-                    T2's Position
-                </h3>
-                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;">
-                    T2 serves as the infrastructure layer for training intelligence, unifying data, AI automation, and outcome measurement in a single platform at exactly the right moment in the market.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Founders -->
-    <section id="founders">
-        <div class="section-header fade-in">
-            <span class="section-tag">Leadership</span>
-            <h2>The Founders</h2>
-            <p class="section-description">Combining deep domain expertise with technical excellence</p>
-        </div>
-        <div class="founders-grid">
-            <div class="founder-card fade-in">
-                <div class="founder-header">
-                    <h3 class="founder-name">Farah Husam</h3>
-                    <div class="founder-title">CEO</div>
-                    <div class="founder-expertise">Learning and Development Expert</div>
-                </div>
-                <ul class="founder-points">
-                    <li>Led large-scale curriculum and learning transformation initiatives across academic and professional environments</li>
-                    <li>Deep expertise in training design, needs analysis, and quality-driven education systems</li>
-                    <li>Direct experience bridging institutional learning challenges with technology-enabled solutions</li>
+        <div class="pricing-grid">
+            <div class="pricing-card fade-in">
+                <div class="pricing-tier">Starter</div>
+                <div class="pricing-price"><sup>$</sup>7</div>
+                <div class="pricing-period">per month</div>
+                <p class="pricing-description">Perfect for small teams getting started with AI-powered training</p>
+                <ul class="pricing-features">
+                    <li>Up to 100 learners</li>
+                    <li>AI document-to-training conversion</li>
+                    <li>Basic outcome analytics</li>
+                    <li>5GB content storage</li>
+                    <li>Email support</li>
+                    <li>Core training templates</li>
+                    <li>Monthly usage reports</li>
                 </ul>
+                <a href="#contact" class="pricing-cta secondary">Get Started</a>
             </div>
-            <div class="founder-card fade-in">
-                <div class="founder-header">
-                    <h3 class="founder-name">Hatem Mosa</h3>
-                    <div class="founder-title">CTO</div>
-                    <div class="founder-expertise">Digital Transformation Leader</div>
-                </div>
-                <ul class="founder-points">
-                    <li>Over 10 years leading cybersecurity and digital transformation initiatives</li>
-                    <li>Designed and secured mission-critical systems across public and private sectors</li>
-                    <li>Deep expertise in scalable architectures, data security, and enterprise-grade platforms</li>
+            
+            <div class="pricing-card popular fade-in">
+                <div class="pricing-tier">Professional</div>
+                <div class="pricing-price"><sup>$</sup>13</div>
+                <div class="pricing-period">per month</div>
+                <p class="pricing-description">Most popular for growing organizations with comprehensive training needs</p>
+                <ul class="pricing-features">
+                    <li>Up to 500 learners</li>
+                    <li>Advanced AI training intelligence</li>
+                    <li>Full outcome analytics dashboard</li>
+                    <li>25GB content storage</li>
+                    <li>Priority support</li>
+                    <li>Custom training templates</li>
+                    <li>Skills gap analysis</li>
+                    <li>Role-based learning paths</li>
+                    <li>API access</li>
+                    <li>Weekly insights reports</li>
                 </ul>
+                <a href="#contact" class="pricing-cta primary">Get Started</a>
+            </div>
+            
+            <div class="pricing-card fade-in">
+                <div class="pricing-tier">Enterprise</div>
+                <div class="pricing-price"><sup>$</sup>20</div>
+                <div class="pricing-period">per month</div>
+                <p class="pricing-description">Advanced features and dedicated support for large-scale deployments</p>
+                <ul class="pricing-features">
+                    <li>Unlimited learners</li>
+                    <li>Full platform capabilities</li>
+                    <li>Advanced training intelligence</li>
+                    <li>Unlimited content storage</li>
+                    <li>Dedicated success manager</li>
+                    <li>Custom integrations</li>
+                    <li>White-label options</li>
+                    <li>Advanced security & compliance</li>
+                    <li>Custom reporting & analytics</li>
+                    <li>SSO/SAML integration</li>
+                    <li>SLA guarantee</li>
+                    <li>Onboarding & training</li>
+                </ul>
+                <a href="#contact" class="pricing-cta secondary">Contact Sales</a>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
+    <!-- CTA Section -->
     <section id="contact">
         <div class="cta-section fade-in">
-            <span class="section-tag">Pre-Seed Round</span>
-            <h2>Join Us in Transforming Corporate Training</h2>
-            <div class="raise-highlight">Raising $150,000</div>
-            <p>Funds core platform build and delivers MVP + pilot readiness within 6 months</p>
-            <a href="mailto:Farahmusaa@gmail.com" class="cta-button" style="font-size: 1.1rem; padding: 1rem 3rem;">Get in Touch</a>
+            <h2>Ready to Transform Your Training?</h2>
+            <p>Discover how T2 can help you turn training into measurable business impact</p>
+            <a href="mailto:Farah.h@transform-training.net" class="cta-button" style="font-size: 1.1rem; padding: 1rem 3rem;">Get in Touch</a>
         </div>
     </section>
 
@@ -970,13 +1037,39 @@
     <footer>
         <div class="footer-content">
             <div class="logo" style="font-size: 2.5rem; margin-bottom: 1rem;">T2</div>
-            <p style="color: var(--text-muted); margin-bottom: 1rem;">Training Designed for Transformative Impact</p>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Training Designed for Transformative Impact</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; max-width: 1000px; margin: 0 auto 3rem; text-align: left;">
+                <div>
+                    <h4 style="color: var(--accent); margin-bottom: 1rem; font-size: 1rem; font-weight: 600;">Platform</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem;"><a href="#use-cases" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;">Use Cases</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#solution" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;">Solution</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#features" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;">Features</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#pricing" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--accent); margin-bottom: 1rem; font-size: 1rem; font-weight: 600;">Use Cases</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem; color: var(--text-muted);">Compliance Training</li>
+                        <li style="margin-bottom: 0.8rem; color: var(--text-muted);">Onboarding</li>
+                        <li style="margin-bottom: 0.8rem; color: var(--text-muted);">Role-Based Training</li>
+                        <li style="margin-bottom: 0.8rem; color: var(--text-muted);">Skills Development</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--accent); margin-bottom: 1rem; font-size: 1rem; font-weight: 600;">Company</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem;"><a href="#contact" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;">Contact Us</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="mailto:Farah.h@transform-training.net" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
             <div class="contact-info">
-                <a href="mailto:Farahmusaa@gmail.com" class="contact-item">
-                    📧 Farahmusaa@gmail.com
-                </a>
-                <a href="tel:+97336363700" class="contact-item">
-                    📞 +973-36363700
+                <a href="mailto:Farah.h@transform-training.net" class="contact-item">
+                    📧 Farah.h@transform-training.net
                 </a>
             </div>
             <div class="copyright">
