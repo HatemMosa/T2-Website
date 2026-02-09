@@ -1,1 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T2 - AI-Powered Training Intelligence Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0A0E27;
+            --accent: #00D9FF;
+            --accent-dark: #0099CC;
+            --secondary: #6C63FF;
+            --success: #00F5A0;
+            --text: #E8E9ED;
+            --text-muted: #9CA3AF;
+            --bg-gradient: linear-gradient(135deg, #0A0E27 0%, #1a1f3a 100%);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Epilogue', sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Background effects */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, var(--accent) 2px, var(--accent) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, var(--accent) 2px, var(--accent) 4px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .gradient-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 1;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 600px;
+            height: 600px;
+            background: var(--accent);
+            top: -200px;
+            right: -200px;
+        }
+
+        .orb-2 {
+            width: 500px;
+            height: 500px;
+            background: var(--secondary);
+            bottom: -150px;
+            left: -150px;
+            animation-delay: -10s;
+        }
+
+        .orb-3 {
+            width: 400px;
+            height: 400px;
+            background: var(--success);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(50px, -50px) scale(1.1); }
+            66% { transform: translate(-30px, 30px) scale(0.9); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(10, 14, 39, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--card-border);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.05em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 217, 255, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(0, 217, 255, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 5% 4rem;
+            z-index: 10;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out 0.3s backwards;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            animation: fadeInUp 1s ease-out 0.5s backwards;
+        }
+
+        .button-secondary {
+            background: transparent;
+            color: var(--text);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid var(--card-border);
+            transition: all 0.3s ease;
+        }
+
+        .button-secondary:hover {
+            border-color: var(--accent);
+            background: var(--card-bg);
+            transform: translateY(-2px);
+        }
+
+        /* Stats Section */
+        .stats {
+            position: relative;
+            padding: 4rem 5%;
+            z-index: 10;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out backwards;
+        }
+
+        .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card:nth-child(2) { animation-delay: 0.2s; }
+        .stat-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Section styles */
+        section {
+            position: relative;
+            padding: 6rem 5%;
+            z-index: 10;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        /* Problem/Solution Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .comparison-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+
+        .comparison-card.problem {
+            border-color: rgba(255, 100, 100, 0.3);
+        }
+
+        .comparison-card.solution {
+            border-color: rgba(0, 245, 160, 0.3);
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .comparison-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .problem .icon {
+            background: rgba(255, 100, 100, 0.15);
+        }
+
+        .solution .icon {
+            background: rgba(0, 245, 160, 0.15);
+        }
+
+        .comparison-list {
+            list-style: none;
+        }
+
+        .comparison-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .comparison-list li:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-list li::before {
+            content: '→';
+            margin-right: 1rem;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.15);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Market Section */
+        .market-highlight {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 30px;
+            padding: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .market-highlight::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 217, 255, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .market-numbers {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .market-stat {
+            text-align: center;
+        }
+
+        .market-stat .number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--success), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+
+        .market-stat .label {
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+
+        /* Founders Section */
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .founder-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+
+        .founder-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.15);
+        }
+
+        .founder-header {
+            margin-bottom: 2rem;
+        }
+
+        .founder-name {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .founder-title {
+            color: var(--accent);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .founder-expertise {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .founder-points {
+            list-style: none;
+        }
+
+        .founder-points li {
+            padding: 0.8rem 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .founder-points li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(108, 99, 255, 0.1));
+            border: 1px solid var(--card-border);
+            border-radius: 30px;
+            padding: 5rem 3rem;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .raise-highlight {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            border-radius: 50px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 217, 255, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            padding: 3rem 5%;
+            border-top: 1px solid var(--card-border);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .founders-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .market-numbers {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Background effects -->
+    <div class="bg-pattern"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">T2</div>
+        <ul class="nav-links">
+            <li><a href="#solution">Solution</a></li>
+            <li><a href="#market">Market</a></li>
+            <li><a href="#founders">Team</a></li>
+        </ul>
+        <a href="#contact" class="cta-button">Get in Touch</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">🚀 AI-Powered Training Intelligence</span>
+            <h1>Transform Training into Measurable Business Impact</h1>
+            <p>The B2B AI-powered SaaS platform that converts internal training content into outcome-driven learning and development at scale</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-button">Join Our Journey</a>
+                <a href="#solution" class="button-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">$360B</div>
+                <div class="stat-label">Global Training Market</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$20-40B</div>
+                <div class="stat-label">Serviceable Available Market</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">6 Mo</div>
+                <div class="stat-label">To MVP & Pilot Readiness</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem & Solution -->
+    <section id="solution">
+        <div class="section-header fade-in">
+            <span class="section-tag">The Challenge</span>
+            <h2>Training is Broken. We're Fixing It.</h2>
+        </div>
+        <div class="comparison-grid">
+            <div class="comparison-card problem fade-in">
+                <h3>
+                    <div class="icon">⚠️</div>
+                    The Problem
+                </h3>
+                <ul class="comparison-list">
+                    <li>Training data scattered across silos and documents</li>
+                    <li>Expensive instructional design with no scalability</li>
+                    <li>Zero proof of real business impact</li>
+                    <li>Training decisions disconnected from organizational priorities</li>
+                </ul>
+            </div>
+            <div class="comparison-card solution fade-in">
+                <h3>
+                    <div class="icon">✨</div>
+                    T2 Solution
+                </h3>
+                <ul class="comparison-list">
+                    <li>All training data unified in one comprehensive system</li>
+                    <li>Affordable AI-powered automation and intelligence</li>
+                    <li>Data-driven impact measurement and analytics</li>
+                    <li>Continuous alignment between training, skills, and business needs</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section>
+        <div class="section-header fade-in">
+            <span class="section-tag">How It Works</span>
+            <h2>One Platform, Complete Training Intelligence</h2>
+            <p class="section-description">T2 integrates the entire training lifecycle end-to-end, eliminating fragmentation across tools</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">📄</div>
+                <h3>AI Document Conversion</h3>
+                <p>Transform any internal document into structured, engaging training content automatically with advanced AI processing</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">📊</div>
+                <h3>Outcome Analytics</h3>
+                <p>Easy-to-use analytics that measure real business outcomes, not just completion rates or satisfaction scores</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🎯</div>
+                <h3>Skills Alignment</h3>
+                <p>Continuously align training programs with organizational skills gaps and strategic business priorities</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🔄</div>
+                <h3>End-to-End Integration</h3>
+                <p>Complete L&D system that covers content creation, delivery, measurement, and optimization in one platform</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">💡</div>
+                <h3>Training Intelligence</h3>
+                <p>AI-powered insights that reveal what's working, what's not, and how to optimize for maximum business impact</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">⚡</div>
+                <h3>Scale Effortlessly</h3>
+                <p>Deploy training programs across your entire organization without the traditional costs or complexity</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Opportunity -->
+    <section id="market">
+        <div class="section-header fade-in">
+            <span class="section-tag">Market Opportunity</span>
+            <h2>A Massive, Underserved Market</h2>
+        </div>
+        <div class="market-highlight fade-in">
+            <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">Estimated Serviceable Available Market (SAM)</h3>
+            <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; max-width: 900px; margin: 0 auto;">
+                The enterprise segment combining training software, analytics, and training intelligence represents $20-40B of the $360B global training market. Based on corporate training software (~$9.3B in 2024) plus the rapid growth in analytics and data-driven training technologies (~$15B and expanding).
+            </p>
+            <div class="market-numbers">
+                <div class="market-stat">
+                    <span class="number">$360B</span>
+                    <span class="label">Total Global Market</span>
+                </div>
+                <div class="market-stat">
+                    <span class="number">$20-40B</span>
+                    <span class="label">Target SAM</span>
+                </div>
+                <div class="market-stat">
+                    <span class="number">$9.3B</span>
+                    <span class="label">Training Software (2024)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Now -->
+    <section>
+        <div class="section-header fade-in">
+            <span class="section-tag">Timing</span>
+            <h2>Why Now?</h2>
+        </div>
+        <div class="comparison-grid">
+            <div class="comparison-card fade-in" style="border-color: var(--accent);">
+                <h3>
+                    <div class="icon" style="background: rgba(0, 217, 255, 0.15);">🔗</div>
+                    The Shift
+                </h3>
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;">
+                    Training has evolved from a content problem into a data integration challenge. Organizations are drowning in scattered training materials with no way to measure impact or align with business objectives.
+                </p>
+            </div>
+            <div class="comparison-card fade-in" style="border-color: var(--secondary);">
+                <h3>
+                    <div class="icon" style="background: rgba(108, 99, 255, 0.15);">🏗️</div>
+                    T2's Position
+                </h3>
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;">
+                    T2 serves as the infrastructure layer for training intelligence, unifying data, AI automation, and outcome measurement in a single platform at exactly the right moment in the market.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founders -->
+    <section id="founders">
+        <div class="section-header fade-in">
+            <span class="section-tag">Leadership</span>
+            <h2>The Founders</h2>
+            <p class="section-description">Combining deep domain expertise with technical excellence</p>
+        </div>
+        <div class="founders-grid">
+            <div class="founder-card fade-in">
+                <div class="founder-header">
+                    <h3 class="founder-name">Farah Husam</h3>
+                    <div class="founder-title">CEO</div>
+                    <div class="founder-expertise">Learning and Development Expert</div>
+                </div>
+                <ul class="founder-points">
+                    <li>Led large-scale curriculum and learning transformation initiatives across academic and professional environments</li>
+                    <li>Deep expertise in training design, needs analysis, and quality-driven education systems</li>
+                    <li>Direct experience bridging institutional learning challenges with technology-enabled solutions</li>
+                </ul>
+            </div>
+            <div class="founder-card fade-in">
+                <div class="founder-header">
+                    <h3 class="founder-name">Hatem Mosa</h3>
+                    <div class="founder-title">CTO</div>
+                    <div class="founder-expertise">Digital Transformation Leader</div>
+                </div>
+                <ul class="founder-points">
+                    <li>Over 10 years leading cybersecurity and digital transformation initiatives</li>
+                    <li>Designed and secured mission-critical systems across public and private sectors</li>
+                    <li>Deep expertise in scalable architectures, data security, and enterprise-grade platforms</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact">
+        <div class="cta-section fade-in">
+            <span class="section-tag">Pre-Seed Round</span>
+            <h2>Join Us in Transforming Corporate Training</h2>
+            <div class="raise-highlight">Raising $150,000</div>
+            <p>Funds core platform build and delivers MVP + pilot readiness within 6 months</p>
+            <a href="mailto:Farahmusaa@gmail.com" class="cta-button" style="font-size: 1.1rem; padding: 1rem 3rem;">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="font-size: 2.5rem; margin-bottom: 1rem;">T2</div>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">Training Designed for Transformative Impact</p>
+            <div class="contact-info">
+                <a href="mailto:Farahmusaa@gmail.com" class="contact-item">
+                    📧 Farahmusaa@gmail.com
+                </a>
+                <a href="tel:+97336363700" class="contact-item">
+                    📞 +973-36363700
+                </a>
+            </div>
+            <div class="copyright">
+                © 2026 T2. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
